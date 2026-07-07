@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  db:
+    image: mongo:latest
+    container_name: rentease-db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    restart: always
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: rentease-backend
+    ports:
+      - "5005:5005"
+    depends_on:
+      - db
+    environment:
+      - PORT=5005
+      - MONGO_URI=mongodb://db:27017/rentease
+      - JWT_SECRET=rentease_super_secret_key_987654321
+      - NODE_ENV=production
+    restart: always
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        - VITE_API_URL=http://localhost:5005/api
+    container_name: rentease-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: always
+
+volumes:
+  mongodb_data:

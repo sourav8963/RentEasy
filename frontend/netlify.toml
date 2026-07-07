@@ -1,0 +1,15 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Proxy API requests to avoid CORS issues
+[[redirects]]
+  from = "/api/*"
+  to = "https://your-deployed-backend-api.com/api/:splat"
+  status = 200
+
+# Fallback for Single Page Application client-side routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
