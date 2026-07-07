@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RentEase - Maintenance Request</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Manrope:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#d7c2ba",
+                        "surface-tint": "#875135",
+                        "background": "#fff8f5",
+                        "on-secondary-fixed": "#1f1b13",
+                        "surface-variant": "#e9e1dc",
+                        "on-tertiary-container": "#2e2e2b",
+                        "inverse-surface": "#34302c",
+                        "surface-dim": "#e1d8d4",
+                        "surface-container-low": "#fbf2ed",
+                        "on-tertiary-fixed": "#1c1c19",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f8efea",
+                        "on-secondary-container": "#686257",
+                        "primary-fixed-dim": "#feb694",
+                        "error": "#ba1a1a",
+                        "tertiary": "#5f5e5b",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#ffdbcc",
+                        "outline": "#85746c",
+                        "on-background": "#1e1b18",
+                        "on-primary-container": "#4c220a",
+                        "surface-bright": "#fff8f5",
+                        "error-container": "#ffdad6",
+                        "secondary": "#645d53",
+                        "inverse-primary": "#feb694",
+                        "surface-container-high": "#efe6e2",
+                        "on-surface-variant": "#52443d",
+                        "secondary-fixed": "#ebe1d4",
+                        "on-primary-fixed-variant": "#6b3a20",
+                        "on-secondary-fixed-variant": "#4c463c",
+                        "primary-container": "#c68667",
+                        "tertiary-fixed": "#e5e2dd",
+                        "surface-container": "#f5ece7",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1e1b18",
+                        "on-primary-fixed": "#351000",
+                        "secondary-fixed-dim": "#cfc5b9",
+                        "surface": "#fff8f5",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#c8c6c2",
+                        "primary": "#875135",
+                        "tertiary-container": "#969591",
+                        "secondary-container": "#e8ded1",
+                        "surface-container-highest": "#e9e1dc",
+                        "on-tertiary-fixed-variant": "#474743",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "gutter": "24px",
+                        "lg": "48px",
+                        "base": "8px",
+                        "md": "24px",
+                        "xl": "80px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["DM Serif Display"],
+                        "body-sm": ["Manrope"],
+                        "label-lg": ["Manrope"],
+                        "headline-sm": ["DM Serif Display"],
+                        "display-lg": ["DM Serif Display"],
+                        "body-md": ["Manrope"],
+                        "label-md": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "headline-md": ["DM Serif Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        .ambient-shadow-1 { box-shadow: 0px 4px 20px rgba(45, 41, 38, 0.04); }
+        .ambient-shadow-2 { box-shadow: 0px 12px 32px rgba(45, 41, 38, 0.08); }
+        .clay-accent { color: theme('colors.primary-container'); }
+        .bg-clay-accent { background-color: theme('colors.primary-container'); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md antialiased">
+<!-- TopNavBar -->
+<nav class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md docked full-width top-0 sticky z-50 border-b border-outline-variant/30 dark:border-outline/20">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-lg max-w-container-max mx-auto h-20">
+<a class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface dark:text-surface-bright flex items-center gap-2" href="#">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">chair</span>
+                RentEase
+            </a>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center gap-gutter">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-lg text-label-lg hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-all duration-300 px-3 py-2 rounded" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-lg text-label-lg hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-all duration-300 px-3 py-2 rounded" href="#">Shop</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-lg text-label-lg hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-all duration-300 px-3 py-2 rounded" href="#">Plan</a>
+<a class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary font-bold pb-1 font-label-lg text-label-lg hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-all duration-300 px-3 pt-2" href="#">Support</a>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-2 text-on-surface hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="p-2 text-on-surface hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined">person</span>
+</button>
+<button class="p-2 text-on-surface hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-lg py-lg md:py-xl">
+<div class="mb-lg">
+<h1 class="font-headline-lg text-headline-lg mb-xs">Maintenance Request</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Report an issue with your rented item. Our team is here to help.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Request Form (Left Column) -->
+<div class="lg:col-span-7 space-y-md">
+<div class="bg-surface-container-lowest rounded-xl p-md md:p-lg ambient-shadow-1 border border-outline-variant/30">
+<form action="#" class="space-y-md" method="POST">
+<!-- Item Selection -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface mb-xs" for="rented_item">Select Rented Item</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border border-secondary-container rounded-lg px-4 py-3 font-body-md text-on-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors appearance-none outline-none" id="rented_item" name="rented_item">
+<option disabled="" selected="" value="">Choose an item...</option>
+<option value="item1">Eames Lounge Chair Replica (Order #RE-8421)</option>
+<option value="item2">Minimalist Oak Dining Table (Order #RE-7732)</option>
+<option value="item3">Noguchi Coffee Table (Order #RE-6190)</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Issue Type -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface mb-sm">Type of Issue</label>
+<div class="grid grid-cols-2 gap-sm">
+<label class="flex items-center p-3 border border-secondary-container rounded-lg cursor-pointer hover:bg-surface-container transition-colors has-[:checked]:bg-primary-container/10 has-[:checked]:border-primary-container group">
+<input class="w-4 h-4 text-primary-container border-outline-variant focus:ring-primary-container focus:ring-offset-background bg-surface" name="issue_type" type="radio" value="damage"/>
+<span class="ml-3 font-body-sm text-on-surface group-has-[:checked]:text-on-surface font-medium">Physical Damage</span>
+</label>
+<label class="flex items-center p-3 border border-secondary-container rounded-lg cursor-pointer hover:bg-surface-container transition-colors has-[:checked]:bg-primary-container/10 has-[:checked]:border-primary-container group">
+<input class="w-4 h-4 text-primary-container border-outline-variant focus:ring-primary-container focus:ring-offset-background bg-surface" name="issue_type" type="radio" value="wear"/>
+<span class="ml-3 font-body-sm text-on-surface group-has-[:checked]:text-on-surface font-medium">Normal Wear &amp; Tear</span>
+</label>
+<label class="flex items-center p-3 border border-secondary-container rounded-lg cursor-pointer hover:bg-surface-container transition-colors has-[:checked]:bg-primary-container/10 has-[:checked]:border-primary-container group">
+<input class="w-4 h-4 text-primary-container border-outline-variant focus:ring-primary-container focus:ring-offset-background bg-surface" name="issue_type" type="radio" value="missing"/>
+<span class="ml-3 font-body-sm text-on-surface group-has-[:checked]:text-on-surface font-medium">Missing Parts</span>
+</label>
+<label class="flex items-center p-3 border border-secondary-container rounded-lg cursor-pointer hover:bg-surface-container transition-colors has-[:checked]:bg-primary-container/10 has-[:checked]:border-primary-container group">
+<input class="w-4 h-4 text-primary-container border-outline-variant focus:ring-primary-container focus:ring-offset-background bg-surface" name="issue_type" type="radio" value="other"/>
+<span class="ml-3 font-body-sm text-on-surface group-has-[:checked]:text-on-surface font-medium">Other</span>
+</label>
+</div>
+</div>
+<!-- Description -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface mb-xs" for="description">Description of Issue</label>
+<textarea class="w-full bg-surface-container-low border border-secondary-container rounded-lg px-4 py-3 font-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors resize-none outline-none" id="description" name="description" placeholder="Please describe the issue in detail. The more information you provide, the faster we can help." rows="4"></textarea>
+</div>
+<!-- Photo Upload -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface mb-xs">Upload Photos (Optional)</label>
+<div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-secondary-container border-dashed rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="space-y-2 text-center">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary-container transition-colors">add_a_photo</span>
+<div class="font-body-sm text-on-surface-variant">
+<label class="relative cursor-pointer rounded-md font-medium text-primary-container hover:text-primary focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary" for="file-upload">
+<span>Upload a file</span>
+<input accept="image/*" class="sr-only" id="file-upload" multiple="" name="file-upload" type="file"/>
+</label>
+<p class="pl-1 inline">or drag and drop</p>
+</div>
+<p class="text-xs text-on-surface-variant/70">PNG, JPG up to 10MB</p>
+</div>
+</div>
+<!-- Uploaded Previews (Static Example) -->
+<div class="flex gap-sm mt-sm">
+<div class="relative w-16 h-16 rounded-md overflow-hidden border border-outline-variant group">
+<img class="w-full h-full object-cover" data-alt="A close up shot of a small scratch on the wooden leg of a minimalist mid-century modern chair, taken in soft, warm indoor lighting, highlighting the texture of the wood against a light cream background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEh5lQG9cLYbcRUqciJ0rZX1J-X-ieWWtygWAKUJ0atoOjm2mSM-GCkQulloBtBn5V0IIQQVSJxTpUCvykmBhXDJKJE_d75F1bl2jvIQb7JKAWUGYx3S-i7RLoG3I598pUWrWatQdJ7L0LkD7hUTl40TA9khsISFMaH8Ke05vBzn9hO6qfBlnUlnQpILi8QDzKUzIE174VPFiump0qKrHgl2tWD5g4qstBtaUM8t1tAA6HJAdavYgtQw"/>
+<button class="absolute top-0 right-0 bg-error text-on-error w-5 h-5 flex items-center justify-center rounded-bl-md opacity-0 group-hover:opacity-100 transition-opacity" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Submit Action -->
+<div class="pt-sm">
+<button class="w-full bg-clay-accent hover:bg-surface-tint text-on-primary font-label-lg text-label-lg py-3 px-6 rounded-lg transition-colors shadow-sm flex items-center justify-center gap-2" type="submit">
+                                Submit Request
+                                <span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Recent Requests Timeline (Right Column) -->
+<div class="lg:col-span-5 space-y-md">
+<div class="bg-surface-container-lowest rounded-xl p-md md:p-lg ambient-shadow-1 border border-outline-variant/30 h-full">
+<h2 class="font-headline-sm text-headline-sm mb-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">history</span>
+                        Recent Requests
+                    </h2>
+<div class="relative border-l border-outline-variant/50 ml-3 space-y-8 pb-4">
+<!-- Timeline Item 1: Pending -->
+<div class="relative pl-6">
+<div class="absolute w-6 h-6 rounded-full bg-surface border-2 border-surface-tint -left-[12px] top-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-surface-tint" data-weight="fill" style="font-variation-settings: 'FILL' 1;">pending</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant mb-1">Today, 10:45 AM</span>
+<h3 class="font-label-lg text-label-lg text-on-surface">Eames Lounge Chair</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">Scratch on the left armrest noticed upon delivery unpacking.</p>
+<div class="mt-2 inline-flex">
+<span class="bg-surface-container-high text-on-surface-variant font-label-md text-label-md px-2 py-1 rounded-full border border-outline-variant/30">Pending Review</span>
+</div>
+</div>
+</div>
+<!-- Timeline Item 2: Scheduled -->
+<div class="relative pl-6">
+<div class="absolute w-6 h-6 rounded-full bg-surface border-2 border-primary-container -left-[12px] top-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-primary-container" data-weight="fill" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant mb-1">Oct 12, 2023</span>
+<h3 class="font-label-lg text-label-lg text-on-surface">Minimalist Oak Dining Table</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">Wobbly leg, needs tightening or replacement hardware.</p>
+<div class="mt-2 inline-flex">
+<span class="bg-primary-container/10 text-primary-fixed-variant font-label-md text-label-md px-2 py-1 rounded-full border border-primary-container/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                                        Scheduled: Oct 15, 2:00 PM
+                                    </span>
+</div>
+</div>
+</div>
+<!-- Timeline Item 3: Resolved -->
+<div class="relative pl-6">
+<div class="absolute w-6 h-6 rounded-full bg-surface border-2 border-outline -left-[12px] top-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-outline" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant mb-1">Sep 28, 2023</span>
+<h3 class="font-label-lg text-label-lg text-on-surface opacity-70">Noguchi Coffee Table</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2 opacity-70">Glass top replacement requested due to minor chipping on the edge.</p>
+<div class="mt-2 inline-flex">
+<span class="bg-surface-container text-on-surface-variant opacity-70 font-label-md text-label-md px-2 py-1 rounded-full border border-outline-variant/30 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+                                        Resolved
+                                    </span>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full mt-sm py-2 font-label-md text-label-md text-surface-tint hover:bg-surface-container-low rounded-lg transition-colors border border-transparent hover:border-outline-variant/30">
+                        View All History
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-inverse-surface w-full py-xl mt-auto border-t border-outline-variant/50">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto px-margin-mobile md:px-lg">
+<div class="col-span-1 md:col-span-4 flex justify-between items-center mb-lg">
+<span class="font-headline-sm text-headline-sm text-primary flex items-center gap-2">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">chair</span>
+                    RentEase
+                </span>
+</div>
+<div class="col-span-1 md:col-span-4 flex flex-wrap gap-x-md gap-y-sm mb-lg">
+<a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary underline-offset-4 transition-opacity duration-200 hover:opacity-80 font-label-lg text-label-lg" href="#">Shipping &amp; Delivery</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary underline-offset-4 transition-opacity duration-200 hover:opacity-80 font-label-lg text-label-lg" href="#">Secure Payments</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary underline-offset-4 transition-opacity duration-200 hover:opacity-80 font-label-lg text-label-lg" href="#">Quality Guarantee</a>
+<a class="text-primary font-bold hover:underline decoration-primary underline-offset-4 transition-opacity duration-200 hover:opacity-80 font-label-lg text-label-lg" href="#">24/7 Support</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary underline-offset-4 transition-opacity duration-200 hover:opacity-80 font-label-lg text-label-lg" href="#">Terms of Service</a>
+</div>
+<div class="col-span-1 md:col-span-4 mt-sm">
+<p class="font-body-sm text-body-sm text-on-surface dark:text-inverse-on-surface">© 2024 RentEase. Conscious Living, Curated Spaces.</p>
+</div>
+</div>
+</footer>
+</body></html>

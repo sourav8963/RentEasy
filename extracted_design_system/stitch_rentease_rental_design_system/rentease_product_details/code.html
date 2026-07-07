@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RentEase - Product Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Manrope:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "tertiary": "#5f5e5b",
+                        "primary-fixed": "#ffdbcc",
+                        "tertiary-fixed": "#e5e2dd",
+                        "surface-container-highest": "#e9e1dc",
+                        "on-secondary-fixed-variant": "#4c463c",
+                        "surface": "#fff8f5",
+                        "secondary": "#645d53",
+                        "surface-container-low": "#fbf2ed",
+                        "secondary-fixed-dim": "#cfc5b9",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#969591",
+                        "on-secondary-fixed": "#1f1b13",
+                        "on-primary-fixed": "#351000",
+                        "on-surface": "#1e1b18",
+                        "primary-fixed-dim": "#feb694",
+                        "surface-bright": "#fff8f5",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e9e1dc",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#875135",
+                        "inverse-surface": "#34302c",
+                        "on-secondary-container": "#686257",
+                        "secondary-container": "#e8ded1",
+                        "surface-container-high": "#efe6e2",
+                        "on-tertiary-container": "#2e2e2b",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#feb694",
+                        "primary-container": "#c68667",
+                        "on-background": "#1e1b18",
+                        "on-surface-variant": "#52443d",
+                        "on-tertiary-fixed": "#1c1c19",
+                        "outline-variant": "#d7c2ba",
+                        "secondary-fixed": "#ebe1d4",
+                        "on-error-container": "#93000a",
+                        "outline": "#85746c",
+                        "surface-dim": "#e1d8d4",
+                        "surface-container": "#f5ece7",
+                        "surface-tint": "#875135",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#6b3a20",
+                        "tertiary-fixed-dim": "#c8c6c2",
+                        "on-tertiary-fixed-variant": "#474743",
+                        "background": "#fff8f5",
+                        "on-primary-container": "#4c220a",
+                        "inverse-on-surface": "#f8efea",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "80px",
+                        "sm": "12px",
+                        "lg": "48px",
+                        "xs": "4px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["DM Serif Display"],
+                        "label-md": ["Manrope"],
+                        "body-sm": ["Manrope"],
+                        "label-lg": ["Manrope"],
+                        "headline-md": ["DM Serif Display"],
+                        "display-lg": ["DM Serif Display"],
+                        "body-lg": ["Manrope"],
+                        "headline-lg": ["DM Serif Display"],
+                        "body-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #fff8f5; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24; }
+        [data-weight="fill"] { font-variation-settings: 'FILL' 1, 'wght' 200, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="font-body-md text-body-md text-on-surface antialiased bg-surface min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md docked full-width top-0 sticky z-50 border-b border-outline-variant/30 dark:border-outline/20 flat no shadows text-primary dark:text-primary-fixed-dim">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-lg max-w-container-max mx-auto h-20">
+<div class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface dark:text-surface-bright">RentEase</div>
+<div class="hidden md:flex gap-gutter items-center font-label-lg text-label-lg">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-all duration-300 px-3 py-2 rounded-lg scale-95 active:scale-90 transition-transform" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-all duration-300 px-3 py-2 rounded-lg scale-95 active:scale-90 transition-transform" href="#">Shop</a>
+<a class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary font-bold pb-1 px-3 py-2 scale-95 active:scale-90 transition-transform" href="#">Plan</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-all duration-300 px-3 py-2 rounded-lg scale-95 active:scale-90 transition-transform" href="#">Support</a>
+</div>
+<div class="flex gap-4 items-center">
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-all duration-300 p-2 rounded-full scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-all duration-300 p-2 rounded-full scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-all duration-300 p-2 rounded-full scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-lg py-lg md:py-xl flex flex-col lg:flex-row gap-gutter">
+<!-- Image Gallery (Left Column) -->
+<div class="w-full lg:w-7/12 flex flex-col gap-sm">
+<div class="w-full aspect-[4/3] rounded-lg overflow-hidden bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="A spacious, high-end Japandi interior design scene featuring a luxurious minimalist sectional sofa in a neutral cream fabric. The room is bathed in soft, natural daylight highlighting the texture of the fabric and the sleek, warm wooden legs. A subtle, modern aesthetic with intentional whitespace and calm atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7Q6Gk91xx_Yo2estlZNbT_Iq67QTY_F52cUItqvBFGqXUh-n83u95-KlAZZb1JM3ZWXBth1s_6XUphTHdFqsptgzvzY0PnDNJxWpE2OufS_V_XXFOseoQrFVlr3VMUf23C70_JnxLlwPIUmhKGe8ZZvVzkh6zctKHRzz1lNN2klm9dloG6dQGATXXNvyXowH1RN073egi_m1mBmR6Tp0MdPWYrWWI7caV9Cm1oukaFGso1KnT7RoM2w"/>
+</div>
+<div class="grid grid-cols-3 gap-sm">
+<div class="aspect-square rounded-lg overflow-hidden bg-surface-container-high cursor-pointer border-2 border-primary-container">
+<img class="w-full h-full object-cover" data-alt="Close up detail shot of premium, sustainable cream fabric texture on a modern minimalist sofa. Soft, even lighting emphasizes the tactile quality and durable weave of the Japandi style furniture piece." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWwOGp57aD32MAFAj5a2s4oK750gSmMNjHCjaVOLYDIkH2yC73-_yClzjoGvmLvFYbOaYBXI3MWkbGUzIkZh8NRD4ATHl6WZfKeeJKOZF_LnAUUqs3Bt0fW_QgTECHUbEIk9IaSyXd9r59RP1D4ruKu2IzgmtbV6PLnKlbYRtd_KITaVzCZAjRapsvKWVknXySreJRvnWhnt_3BjIMEF89m9pxVaDBIMcVFLLufrIBDac757DhXa07NQ"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden bg-surface-container-high cursor-pointer hover:opacity-80 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="Side profile view of a minimalist wooden sofa armrest and legs, demonstrating clean Scandinavian lines and Japanese craftsmanship. Warm wood tones against a bright, airy cream background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjBEiAbJud1wxe4h-Lt9CPJ2bcuFJARVruOgIHpNuIA7C7ApQuT0MkrWgbE4m_iMGi4ivQoCekgXavN1xWEyU699g4AEb7Rvl890OUJrtojCAxskGvcSnrJFeVRBkfytWPpUOa7-7rTREi7Sfx2FeUe08aXwIjfHTkArbZXdRiGEG4Wcn7N0gRv1ODqOv9SOiRsGlAcsf8gkw9kdPXk-tb-FTdO4KPFH0H82vnGMeMZkItBJ_fsB0Tjg"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden bg-surface-container-high cursor-pointer hover:opacity-80 transition-opacity flex items-center justify-center bg-surface-container-low">
+<span class="material-symbols-outlined text-outline text-[32px]">play_circle</span>
+</div>
+</div>
+</div>
+<!-- Product Info & Rental Plan Widget (Right Column) -->
+<div class="w-full lg:w-5/12 flex flex-col gap-lg sticky top-24">
+<!-- Info Section -->
+<div class="flex flex-col gap-xs">
+<div class="flex items-center gap-2 mb-2">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-md text-label-md">Available</span>
+<div class="flex items-center text-primary-container">
+<span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm">star_half</span>
+<span class="font-label-md text-label-md text-outline ml-1">(4.8/5)</span>
+</div>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Oslo Sectional Sofa</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4">
+                    Experience the perfect blend of Scandinavian functionality and Japanese minimalism. Featuring sustainable linen-blend fabric, ergonomic high-density foam, and a solid ash wood frame. Designed for conscious living spaces.
+                </p>
+</div>
+<!-- Rental Plan Widget -->
+<div class="bg-surface-container-lowest rounded-xl p-md border border-secondary-container shadow-[0px_4px_20px_rgba(45,41,38,0.04)]">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-md">Select Rental Plan</h3>
+<div class="grid grid-cols-3 gap-sm mb-md">
+<label class="cursor-pointer relative">
+<input class="peer sr-only" name="tenure" type="radio" value="3"/>
+<div class="border border-secondary-container rounded-lg p-sm text-center peer-checked:border-primary-container peer-checked:bg-surface-container-low transition-all">
+<div class="font-label-lg text-label-lg text-on-surface">3 Months</div>
+<div class="font-body-sm text-body-sm text-outline mt-1">$120/mo</div>
+</div>
+</label>
+<label class="cursor-pointer relative">
+<input checked="" class="peer sr-only" name="tenure" type="radio" value="6"/>
+<div class="border border-secondary-container rounded-lg p-sm text-center peer-checked:border-primary-container peer-checked:bg-surface-container-low transition-all shadow-[0px_12px_32px_rgba(45,41,38,0.08)]">
+<div class="font-label-lg text-label-lg text-on-surface">6 Months</div>
+<div class="font-body-sm text-body-sm text-primary mt-1">$95/mo</div>
+</div>
+<div class="absolute -top-2 left-1/2 -translate-x-1/2 bg-primary-container text-on-primary font-label-md text-label-md text-[10px] px-2 py-0.5 rounded-full whitespace-nowrap">Popular</div>
+</label>
+<label class="cursor-pointer relative">
+<input class="peer sr-only" name="tenure" type="radio" value="12"/>
+<div class="border border-secondary-container rounded-lg p-sm text-center peer-checked:border-primary-container peer-checked:bg-surface-container-low transition-all">
+<div class="font-label-lg text-label-lg text-on-surface">12 Months</div>
+<div class="font-body-sm text-body-sm text-outline mt-1">$75/mo</div>
+</div>
+</label>
+</div>
+<div class="flex justify-between items-center py-sm border-t border-secondary-container mt-sm">
+<span class="font-body-md text-body-md text-on-surface-variant">Refundable Deposit</span>
+<span class="font-label-lg text-label-lg text-on-surface">$150</span>
+</div>
+<button class="w-full bg-primary-container text-on-primary font-label-lg text-label-lg py-3 rounded-lg mt-md hover:bg-primary transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-sm">shopping_cart</span>
+                    Add to Cart
+                </button>
+</div>
+<!-- Delivery & Maintenance -->
+<div class="flex flex-col gap-sm bg-surface-container-low p-md rounded-lg">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container">local_shipping</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">72-Hour Delivery Guarantee</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Fast, professional white-glove delivery to your living room.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 mt-2">
+<span class="material-symbols-outlined text-primary-container">handyman</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Free Maintenance</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Complimentary deep cleaning and repair support during your rental period.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-inverse-surface w-full py-xl mt-auto border-t border-outline-variant/50 flat text-on-surface dark:text-inverse-on-surface">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto px-margin-mobile md:px-lg font-body-sm text-body-sm">
+<div class="flex flex-col gap-4">
+<div class="font-headline-sm text-headline-sm text-primary">RentEase</div>
+<p class="text-on-surface-variant dark:text-surface-variant">© 2024 RentEase. Conscious Living, Curated Spaces.</p>
+</div>
+<div class="flex flex-col gap-3 font-label-lg text-label-lg">
+<a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary underline-offset-4 transition-opacity duration-200 hover:opacity-80" href="#">Shipping &amp; Delivery</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary underline-offset-4 transition-opacity duration-200 hover:opacity-80" href="#">Secure Payments</a>
+</div>
+<div class="flex flex-col gap-3 font-label-lg text-label-lg">
+<a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary underline-offset-4 transition-opacity duration-200 hover:opacity-80" href="#">Quality Guarantee</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary underline-offset-4 transition-opacity duration-200 hover:opacity-80" href="#">24/7 Support</a>
+</div>
+<div class="flex flex-col gap-3 font-label-lg text-label-lg">
+<a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary underline-offset-4 transition-opacity duration-200 hover:opacity-80" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>

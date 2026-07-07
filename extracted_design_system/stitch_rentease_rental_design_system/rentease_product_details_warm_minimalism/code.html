@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RentEase - Product Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600&amp;family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e5e2dd",
+                        "on-primary-container": "#fffbff",
+                        "tertiary-fixed": "#ebe1da",
+                        "on-tertiary-fixed": "#1f1b17",
+                        "primary-fixed": "#ffdbcb",
+                        "on-surface": "#1c1c19",
+                        "on-error-container": "#93000a",
+                        "primary": "#904820",
+                        "inverse-primary": "#ffb692",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#ffb692",
+                        "error-container": "#ffdad6",
+                        "secondary": "#825422",
+                        "inverse-on-surface": "#f3f0eb",
+                        "outline": "#87736a",
+                        "on-primary": "#ffffff",
+                        "surface": "#fcf9f4",
+                        "on-tertiary-fixed-variant": "#4c4641",
+                        "on-tertiary-container": "#fffbff",
+                        "outline-variant": "#dac2b7",
+                        "on-secondary-fixed": "#2c1600",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#54433b",
+                        "surface-variant": "#e5e2dd",
+                        "secondary-container": "#fdc083",
+                        "on-secondary-container": "#784c1a",
+                        "surface-container-high": "#ebe8e3",
+                        "secondary-fixed-dim": "#f7bb7e",
+                        "tertiary-fixed-dim": "#cec5be",
+                        "surface-dim": "#dcdad5",
+                        "on-secondary-fixed-variant": "#663d0b",
+                        "inverse-surface": "#31302d",
+                        "tertiary": "#615b55",
+                        "surface-bright": "#fcf9f4",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#7b736d",
+                        "on-background": "#1c1c19",
+                        "primary-container": "#af6036",
+                        "on-primary-fixed": "#341100",
+                        "surface-tint": "#934a22",
+                        "background": "#fcf9f4",
+                        "surface-container-low": "#f6f3ee",
+                        "surface-container": "#f0ede9",
+                        "secondary-fixed": "#ffdcbd",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#75330c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "label-md": ["Hanken Grotesk"],
+                        "display-lg": ["Manrope"],
+                        "headline-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #fcf9f4; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24; }
+        [data-weight="fill"] { font-variation-settings: 'FILL' 1, 'wght' 200, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="font-body-md text-body-md text-on-surface antialiased bg-surface min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-md docked full-width top-0 sticky z-50 border-b border-outline-variant/50 dark:border-outline/20 flat no shadows text-primary dark:text-primary-fixed-dim">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-20">
+<div class="font-headline-lg text-headline-lg font-bold tracking-tight text-primary dark:text-primary-fixed-dim">RentEase</div>
+<div class="hidden md:flex gap-gutter items-center font-label-md text-label-md">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:bg-surface-container transition-all duration-300 px-4 py-2 rounded-lg scale-95 active:scale-90 transition-transform" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:bg-surface-container transition-all duration-300 px-4 py-2 rounded-lg scale-95 active:scale-90 transition-transform" href="#">Shop</a>
+<a class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary font-bold pb-1 px-4 py-2 scale-95 active:scale-90 transition-transform bg-primary-container/10 rounded-t-lg" href="#">Plan</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:bg-surface-container transition-all duration-300 px-4 py-2 rounded-lg scale-95 active:scale-90 transition-transform" href="#">Support</a>
+</div>
+<div class="flex gap-4 items-center">
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-surface-container-high transition-all duration-300 p-2 rounded-full scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-surface-container-high transition-all duration-300 p-2 rounded-full scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-surface-container-high transition-all duration-300 p-2 rounded-full scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-20 flex flex-col lg:flex-row gap-gutter">
+<!-- Image Gallery (Left Column) -->
+<div class="w-full lg:w-7/12 flex flex-col gap-unit">
+<div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="A spacious, high-end Japandi interior design scene featuring a luxurious minimalist sectional sofa in a neutral cream fabric. The room is bathed in soft, natural daylight highlighting the texture of the fabric and the sleek, warm wooden legs. A subtle, modern aesthetic with intentional whitespace and calm atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7Q6Gk91xx_Yo2estlZNbT_Iq67QTY_F52cUItqvBFGqXUh-n83u95-KlAZZb1JM3ZWXBth1s_6XUphTHdFqsptgzvzY0PnDNJxWpE2OufS_V_XXFOseoQrFVlr3VMUf23C70_JnxLlwPIUmhKGe8ZZvVzkh6zctKHRzz1lNN2klm9dloG6dQGATXXNvyXowH1RN073egi_m1mBmR6Tp0MdPWYrWWI7caV9Cm1oukaFGso1KnT7RoM2w"/>
+</div>
+<div class="grid grid-cols-3 gap-unit mt-2">
+<div class="aspect-square rounded-xl overflow-hidden bg-surface-container-high cursor-pointer border-2 border-primary">
+<img class="w-full h-full object-cover" data-alt="Close up detail shot of premium, sustainable cream fabric texture on a modern minimalist sofa. Soft, even lighting emphasizes the tactile quality and durable weave of the Japandi style furniture piece." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWwOGp57aD32MAFAj5a2s4oK750gSmMNjHCjaVOLYDIkH2yC73-_yClzjoGvmLvFYbOaYBXI3MWkbGUzIkZh8NRD4ATHl6WZfKeeJKOZF_LnAUUqs3Bt0fW_QgTECHUbEIk9IaSyXd9r59RP1D4ruKu2IzgmtbV6PLnKlbYRtd_KITaVzCZAjRapsvKWVknXySreJRvnWhnt_3BjIMEF89m9pxVaDBIMcVFLLufrIBDac757DhXa07NQ"/>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden bg-surface-container-high cursor-pointer hover:opacity-80 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="Side profile view of a minimalist wooden sofa armrest and legs, demonstrating clean Scandinavian lines and Japanese craftsmanship. Warm wood tones against a bright, airy cream background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjBEiAbJud1wxe4h-Lt9CPJ2bcuFJARVruOgIHpNuIA7C7ApQuT0MkrWgbE4m_iMGi4ivQoCekgXavN1xWEyU699g4AEb7Rvl890OUJrtojCAxskGvcSnrJFeVRBkfytWPpUOa7-7rTREi7Sfx2FeUe08aXwIjfHTkArbZXdRiGEG4Wcn7N0gRv1ODqOv9SOiRsGlAcsf8gkw9kdPXk-tb-FTdO4KPFH0H82vnGMeMZkItBJ_fsB0Tjg"/>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden bg-secondary-container cursor-pointer hover:opacity-80 transition-opacity flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[40px]">play_circle</span>
+</div>
+</div>
+</div>
+<!-- Product Info & Rental Plan Widget (Right Column) -->
+<div class="w-full lg:w-5/12 flex flex-col gap-8 sticky top-28">
+<!-- Info Section -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3 mb-2">
+<span class="bg-primary-container text-on-primary-container px-4 py-1.5 rounded-full font-label-md text-label-md tracking-wider uppercase text-xs">Available</span>
+<div class="flex items-center text-secondary">
+<span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm">star_half</span>
+<span class="font-label-md text-label-md text-on-surface-variant ml-2">(4.8/5)</span>
+</div>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface mt-2">Oslo Sectional Sofa</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 leading-relaxed">
+                Experience the perfect blend of Scandinavian functionality and Japanese minimalism. Featuring sustainable linen-blend fabric, ergonomic high-density foam, and a solid ash wood frame. Designed for conscious living spaces.
+            </p>
+</div>
+<!-- Rental Plan Widget -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 border-2 border-secondary-container shadow-lg shadow-secondary/5">
+<h3 class="font-headline-lg text-2xl font-bold text-on-surface mb-6">Select Rental Plan</h3>
+<div class="grid grid-cols-3 gap-3 mb-6">
+<label class="cursor-pointer relative">
+<input class="peer sr-only" name="tenure" type="radio" value="3"/>
+<div class="border-2 border-outline-variant rounded-xl p-3 text-center peer-checked:border-primary peer-checked:bg-primary-container/10 transition-all h-full flex flex-col justify-center">
+<div class="font-label-md text-label-md text-on-surface">3 Months</div>
+<div class="font-body-md text-sm text-on-surface-variant mt-1">$120/mo</div>
+</div>
+</label>
+<label class="cursor-pointer relative">
+<input checked="" class="peer sr-only" name="tenure" type="radio" value="6"/>
+<div class="border-2 border-outline-variant rounded-xl p-3 text-center peer-checked:border-primary peer-checked:bg-primary-container/10 transition-all shadow-md shadow-primary/10 h-full flex flex-col justify-center">
+<div class="font-label-md text-label-md text-on-surface">6 Months</div>
+<div class="font-body-md text-sm text-primary font-bold mt-1">$95/mo</div>
+</div>
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-on-primary font-label-md text-[10px] uppercase tracking-wider px-3 py-1 rounded-full whitespace-nowrap shadow-sm">Popular</div>
+</label>
+<label class="cursor-pointer relative">
+<input class="peer sr-only" name="tenure" type="radio" value="12"/>
+<div class="border-2 border-outline-variant rounded-xl p-3 text-center peer-checked:border-primary peer-checked:bg-primary-container/10 transition-all h-full flex flex-col justify-center">
+<div class="font-label-md text-label-md text-on-surface">12 Months</div>
+<div class="font-body-md text-sm text-on-surface-variant mt-1">$75/mo</div>
+</div>
+</label>
+</div>
+<div class="flex justify-between items-center py-4 border-t-2 border-surface-container mt-2">
+<span class="font-body-md text-body-md text-on-surface-variant">Refundable Deposit</span>
+<span class="font-label-md text-label-md text-on-surface text-lg">$150</span>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-4 rounded-xl mt-4 hover:bg-primary-container hover:text-on-primary-container transition-all shadow-md hover:shadow-lg flex justify-center items-center gap-2 text-base">
+<span class="material-symbols-outlined text-base">shopping_cart</span>
+                Add to Cart
+            </button>
+</div>
+<!-- Delivery & Maintenance -->
+<div class="flex flex-col gap-4 bg-secondary-container/30 p-6 rounded-2xl border border-secondary-container/50">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-full">local_shipping</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">72-Hour Delivery Guarantee</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Fast, professional white-glove delivery to your living room.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 mt-2">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-full">handyman</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Free Maintenance</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Complimentary deep cleaning and repair support during your rental period.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-high w-full py-16 mt-auto border-t border-outline-variant/30 text-on-surface">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop font-body-md text-sm">
+<div class="flex flex-col gap-4">
+<div class="font-headline-lg text-2xl font-bold text-primary">RentEase</div>
+<p class="text-on-surface-variant">© 2024 RentEase. Conscious Living, Curated Spaces.</p>
+</div>
+<div class="flex flex-col gap-4 font-label-md text-label-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Shipping &amp; Delivery</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Secure Payments</a>
+</div>
+<div class="flex flex-col gap-4 font-label-md text-label-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Quality Guarantee</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">24/7 Support</a>
+</div>
+<div class="flex flex-col gap-4 font-label-md text-label-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>

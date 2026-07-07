@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RentEase - Modern Furniture Rental</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600&amp;family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e5e2dd",
+                        "on-primary-container": "#fffbff",
+                        "tertiary-fixed": "#ebe1da",
+                        "on-tertiary-fixed": "#1f1b17",
+                        "primary-fixed": "#ffdbcb",
+                        "on-surface": "#1c1c19",
+                        "on-error-container": "#93000a",
+                        "primary": "#904820",
+                        "inverse-primary": "#ffb692",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#ffb692",
+                        "error-container": "#ffdad6",
+                        "secondary": "#825422",
+                        "inverse-on-surface": "#f3f0eb",
+                        "outline": "#87736a",
+                        "on-primary": "#ffffff",
+                        "surface": "#fcf9f4",
+                        "on-tertiary-fixed-variant": "#4c4641",
+                        "on-tertiary-container": "#fffbff",
+                        "outline-variant": "#dac2b7",
+                        "on-secondary-fixed": "#2c1600",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#54433b",
+                        "surface-variant": "#e5e2dd",
+                        "secondary-container": "#fdc083",
+                        "on-secondary-container": "#784c1a",
+                        "surface-container-high": "#ebe8e3",
+                        "secondary-fixed-dim": "#f7bb7e",
+                        "tertiary-fixed-dim": "#cec5be",
+                        "surface-dim": "#dcdad5",
+                        "on-secondary-fixed-variant": "#663d0b",
+                        "inverse-surface": "#31302d",
+                        "tertiary": "#615b55",
+                        "surface-bright": "#fcf9f4",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#7b736d",
+                        "on-background": "#1c1c19",
+                        "primary-container": "#af6036",
+                        "on-primary-fixed": "#341100",
+                        "surface-tint": "#934a22",
+                        "background": "#fcf9f4",
+                        "surface-container-low": "#f6f3ee",
+                        "surface-container": "#f0ede9",
+                        "secondary-fixed": "#ffdcbd",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#75330c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "label-md": ["Hanken Grotesk"],
+                        "display-lg": ["Manrope"],
+                        "headline-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #fcf9f4; /* surface */
+            color: #1c1c19; /* on-surface */
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-body-md">
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest/90 dark:bg-surface-dim/80 backdrop-blur-md full-width top-0 sticky z-50 border-b border-outline-variant/30 dark:border-outline/20">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-20">
+<!-- Brand -->
+<a class="font-headline-lg text-headline-lg tracking-tight text-primary dark:text-surface-bright" href="#">RentEase</a>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex gap-gutter items-center">
+<a class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary font-bold pb-1 text-label-md font-label-md uppercase" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors text-label-md font-label-md uppercase" href="#">Shop</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors text-label-md font-label-md uppercase" href="#">Plan</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors text-label-md font-label-md uppercase" href="#">Support</a>
+</nav>
+<!-- Trailing Icons -->
+<div class="flex gap-unit items-center text-primary dark:text-primary-fixed-dim">
+<button aria-label="Search" class="p-2 rounded-full hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-all duration-300 scale-95 active:scale-90">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button aria-label="Profile" class="p-2 rounded-full hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-all duration-300 scale-95 active:scale-90">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+<button aria-label="Cart" class="p-2 rounded-full hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-all duration-300 scale-95 active:scale-90">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative w-full h-[80vh] md:h-[90vh] bg-surface-container-low overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Beautifully furnished living room" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCClG1vrEW7R20L2bkbG52lTmrDNg9gdVaWXS098wCAEODCAJrhWcO2CS581XauwU_5-P5EcWMaRhsoEu2CrbW0QGbo4ej5pU3m1MC61jYM3pEmS6T1RcYpUaYTao9jgq8tiG6ocQPXvPs809cZTPAwu8f1QzsWlzUnaa52B2K5C8JiVEJHdXnmKsFOjJlnVlPs5ig3VmfrXZKYhNat2lTNlJuaaF8PqWJohwDHBl83CSzbPsre857XCzzlXuYujfZvaTk"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest/90 via-surface-container-lowest/60 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-full flex items-center">
+<div class="max-w-2xl">
+<span class="font-label-md text-label-md text-primary uppercase tracking-widest mb-4 block">Modern Designs. Timeless Comfort.</span>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-6 leading-tight">Furniture That Defines Your Space</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-lg">Discover curated collections that blend style, functionality and quality for every corner of your home.</p>
+<button class="bg-primary text-on-primary rounded-lg px-8 py-4 font-label-md text-label-md uppercase flex items-center gap-2 hover:bg-primary-container transition-colors duration-300 shadow-md">
+                        Shop Now
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Trust Bar -->
+<section class="border-y border-outline-variant/30 bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
+<div class="flex flex-col md:flex-row items-center gap-4 justify-center md:justify-start">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Free Shipping</h4>
+<p class="font-body-md text-sm text-on-surface-variant">On all orders over $100</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-4 justify-center md:justify-start">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Secure Payment</h4>
+<p class="font-body-md text-sm text-on-surface-variant">100% secure checkout</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-4 justify-center md:justify-start">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="workspace_premium">workspace_premium</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Premium Quality</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Crafted with care</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-4 justify-center md:justify-start">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">24/7 Support</h4>
+<p class="font-body-md text-sm text-on-surface-variant">We're here to help</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Shop by Category -->
+<section class="py-16 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<h2 class="font-headline-lg text-headline-lg text-center text-on-surface mb-12">Shop By Category</h2>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+<!-- Category 1 -->
+<a class="group flex flex-col gap-4" href="#">
+<div class="aspect-square rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A bright, airy modern Japandi living room featuring a plush cream sofa, light oak coffee table, and subtle warm lighting. The space is minimalist and inviting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9Npub_RiQO0KUO5vJxKi0TrqeKe1OnyvCZXljpJTK2XoJ304IMCXKfDtzhhQszHF4dOM5BDMfYTqSL73r74kQGCssiGfxXWJvsPHMUn9idj-Gfbg0XAkK-lV7aubwS3Yfeh83TfZ1isfwqSYA1KvLbx8_dU3g6XJBbKDyzgFlOas1q0ORCp1A3xKLYPcMKEjV2LL9IU4hcottcKjosxkiebH3WBe1GHqgic1Lzv8W4m3PTJVM5wc_4g"/>
+</div>
+<div class="text-center bg-surface-container p-4 rounded-lg group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined mb-2 text-primary group-hover:text-on-primary-container" data-icon="weekend">weekend</span>
+<h3 class="font-label-md text-label-md uppercase">Living Room</h3>
+</div>
+</a>
+<!-- Category 2 -->
+<a class="group flex flex-col gap-4" href="#">
+<div class="aspect-square rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An elegant dining room setup with a minimalist wooden dining table, neutral upholstered chairs, and a statement pendant light overhead. Warm, serene atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIxge0A5-hEUmIWaZUG9bgZb6tPLf6RwadOKf3qechpXhimRADlyZ6_UhIxLss95AwqWrr4-sQO3fw6AVmG0zROLR1k1-_MgfHmciWouPAF0IyCW6KeBEjfEcRcheu8l4rTShAdA5z6zfrViPM1F-5sqfnlA-dQtlU6gOU5nbQkTyJCGrOlkwwnC3ER233S6OSBGOkW-_VvANo5uU1Zg4Ul3MzVI7xT_glv_kfzi2bZ-xq5Fa8t03tDQ"/>
+</div>
+<div class="text-center bg-surface-container p-4 rounded-lg group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined mb-2 text-primary group-hover:text-on-primary-container" data-icon="table_restaurant">table_restaurant</span>
+<h3 class="font-label-md text-label-md uppercase">Dining Room</h3>
+</div>
+</a>
+<!-- Category 3 -->
+<a class="group flex flex-col gap-4" href="#">
+<div class="aspect-square rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A cozy, tranquil bedroom in a Japandi style with a low-profile wooden bed, crisp white linens, and soft, diffused natural light pouring in." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAR_vJkjFKZa1t4Y4rdvYYc7xRlfwgyVIoQUhYLt1C19GSbVVnbMI4HyM8Yp2ajLF6PdSlGJSihKjmih0P8WGhq9xhJjz7GWA5l0SM9_A1nNlbRqJyhLlXpoDpjTDnQH2S01GIc3dOu-HONCs8D68u7TrERwYKd58735sT2s8Kk0yyKJCI7KqzRkgQYy7ZGfxE5sQuLqqkDCCL0NTzZsVsUZqGZ7HdQvhdSkVUe8_gHfaTZ-k3J2AgOg"/>
+</div>
+<div class="text-center bg-surface-container p-4 rounded-lg group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined mb-2 text-primary group-hover:text-on-primary-container" data-icon="bed">bed</span>
+<h3 class="font-label-md text-label-md uppercase">Bedroom</h3>
+</div>
+</a>
+<!-- Category 4 -->
+<a class="group flex flex-col gap-4" href="#">
+<div class="aspect-square rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A clean, organized home office space featuring a sleek wooden desk, ergonomic chair, and minimalistic decor. Bright and professional aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRinFOgRXwWYvdBJ1Hg2UIFUO6obFZkPITVTm0NCQWH1UOZ6rxJgODqap0iDheJ1XkV4sjl2n8rRMLKsMQXHf2VAoGBq5pcAtXYzU1SXD73Sj5O7pgdG2Gt-ZPyRrMrokJ6t5CzBGgVh3VJo7u69JNfzXD6NPkFE_dxfL5ZXDMs8vD9AeUOR0FUED_OV3EFy0KOTAaQ7ttlFC6rjL-Ff3-v4U3_3_Fn8oTKuZssqd5t9oMLh3ZRMTQWQ"/>
+</div>
+<div class="text-center bg-surface-container p-4 rounded-lg group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined mb-2 text-primary group-hover:text-on-primary-container" data-icon="desk">desk</span>
+<h3 class="font-label-md text-label-md uppercase">Office</h3>
+</div>
+</a>
+<!-- Category 5 -->
+<a class="group flex flex-col gap-4 hidden md:flex" href="#">
+<div class="aspect-square rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A modern kitchen counter showcasing sleek, high-end, minimalist appliances in neutral tones. The setting is impeccably clean and functional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJOcdf-NVikfac3UkMFyNBoPYG1yFlnbZ2jNabGwIpqSYbqrGxSVuoTQlDVny8M7BQDY9lcIojSi069xlNnQr-tpIETtGXkeLI0HLNsNwgemTNDl3WA78vOBCBePYDxRndggFI4pL_0kL64hDVQM9PaGPby_3EZ3SFJ3wHQUxuaEkBfk3qqpQSAKyaJNAqYoekUkovuscAdy6QEQTerF8GPD6wyJw5v_RqfUsGta6V6lMeHmrDHZVskA"/>
+</div>
+<div class="text-center bg-surface-container p-4 rounded-lg group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined mb-2 text-primary group-hover:text-on-primary-container" data-icon="kitchen">kitchen</span>
+<h3 class="font-label-md text-label-md uppercase">Appliances</h3>
+</div>
+</a>
+</div>
+</section>
+<!-- Summer Sale Banner -->
+<section class="py-16 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="relative w-full h-[400px] rounded-2xl overflow-hidden bg-tertiary-container flex items-center">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-70 mix-blend-overlay" data-alt="A warm, sunlit interior space featuring a single elegant accent chair placed near a shadow-casting window. Soft beige tones and a serene summer mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP9kpf69z1igyZ6fO3uNOWkdj1fiFUB2gjUn9pP9RCcGMBKZjiKhDIY5db-01TzNGATWQVfDY03XmJJpMKtlOK4RFlKrYyx7Ap4-FNihmBDV7HXAAbxw5Y6DsTNj3BY2jdzsdKDazF8sCbH_cKKs7V4ApNSTIshtXFn_hIaX6Vmp-_Q9pYov72wLGFNBPY4nF5kF0umZT6_BqJ3NAqMANIpr7pjDALEEDaUwJ_1ivlwmKwXYrhlte2Yw"/>
+</div>
+<div class="relative z-10 p-8 md:p-16 max-w-xl text-on-tertiary-container">
+<span class="font-label-md text-label-md uppercase tracking-widest mb-2 block">Summer Sale</span>
+<h2 class="font-headline-lg text-headline-lg mb-4">Up to 30% Off</h2>
+<p class="font-body-md text-body-md mb-8">On selected collections. Elevate your space this season.</p>
+<button class="bg-surface-container-lowest text-primary rounded-lg px-6 py-3 font-label-md text-label-md uppercase flex items-center gap-2 hover:bg-surface transition-colors duration-300">
+                        Shop Now
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- New Arrivals -->
+<section class="py-16 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop overflow-hidden">
+<h2 class="font-headline-lg text-headline-lg text-center text-on-surface mb-12">New Arrivals</h2>
+<div class="flex overflow-x-auto pb-8 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0 gap-6 snap-x snap-mandatory hide-scrollbar">
+<!-- Product 1 -->
+<div class="flex-none w-72 snap-start group cursor-pointer">
+<div class="w-full aspect-[4/3] bg-surface-container rounded-xl mb-4 p-6 flex items-center justify-center relative overflow-hidden group-hover:bg-secondary-container transition-colors duration-300">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 mix-blend-multiply" data-alt="A clean, isolated product shot of a minimalist 3-seater sofa in a soft cream fabric, against a pure light beige background. High-end catalog style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoQfoVHmHnLMuHQrh-0SvQZVXP8NHCsf-T-BVTmRihORrI2L25SraOYJuObjlXBj7kc9gcYjYbgnftDDJl94OGzSic9l7xgmXYj1OLkczVpY84t4yE17mugtSvvNz2V7046udkmQTYip-PzjMepWgkloKZ2h8x68wSteSJcJa51BKjqz6tksn3LaiQkpov8XuWBBux01hTVABXb-MOK6hFjelU-1Tr4H6t1zP4d0-Os76oWNasT9nlLA"/>
+<div class="absolute top-4 right-4 bg-surface-container-lowest/90 backdrop-blur rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary" data-icon="favorite_border">favorite_border</span>
+</div>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface mb-1">Luna 3-Seater Sofa</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$45 / mo</p>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="flex-none w-72 snap-start group cursor-pointer">
+<div class="w-full aspect-[4/3] bg-surface-container rounded-xl mb-4 p-6 flex items-center justify-center relative overflow-hidden group-hover:bg-secondary-container transition-colors duration-300">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 mix-blend-multiply" data-alt="A clean, isolated product shot of a round, light oak coffee table with a sculptural base, against a pure light beige background. High-end catalog style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc-TdWvahXbtJMFD9A6WNORiA3JIIwycf6Bj1PhxgbJxtAsxYx_sPnMLNewX7yYLZ1oNH6m1vgt3xMYGoLcDbwHuuDrgRjluAJ0bYVsuGPvYjRwuAHp__Y1O93Gl1jSS1jN6891X09PKo-hTiMZgioVMFMMsxlSYjKi2OsaKgTtapjZFYSytvCaaL6zMrGr3_nWbLmzgO8Lhj162EprTEIYkAsqk0fvYvJedbgF6tB15ttuB_pcuPlaw"/>
+<div class="absolute top-4 right-4 bg-surface-container-lowest/90 backdrop-blur rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary" data-icon="favorite_border">favorite_border</span>
+</div>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface mb-1">Nova Coffee Table</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$15 / mo</p>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="flex-none w-72 snap-start group cursor-pointer">
+<div class="w-full aspect-[4/3] bg-surface-container rounded-xl mb-4 p-6 flex items-center justify-center relative overflow-hidden group-hover:bg-secondary-container transition-colors duration-300">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 mix-blend-multiply" data-alt="A clean, isolated product shot of a mid-century modern accent chair with olive green upholstery and a wooden frame, against a pure light beige background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRwl931BstPQEZIQmi2EyU8uEDhudSy4dJwWM92P6Xgn8vJxqehgWSEVJqRt_Mj1yReVEy8JNpCzeWm57fkMCE-dq_D8USroyo_AyOQHya5v-_WA0OGGPLYu_D337rVvsQgEUAWCZQyqshYSLwGNn4HTyXolMc_mPYXGlg5XxQVTG6iU-BwUn30bY1ltluJwGhonrDRwhK27yCpZ8Z6YpxLIMLrWZcY9kfecxqzgvSQBGcV4DGc3Mv6Q"/>
+<div class="absolute top-4 right-4 bg-surface-container-lowest/90 backdrop-blur rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary" data-icon="favorite_border">favorite_border</span>
+</div>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface mb-1">Elle Accent Chair</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$25 / mo</p>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="flex-none w-72 snap-start group cursor-pointer">
+<div class="w-full aspect-[4/3] bg-surface-container rounded-xl mb-4 p-6 flex items-center justify-center relative overflow-hidden group-hover:bg-secondary-container transition-colors duration-300">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 mix-blend-multiply" data-alt="A clean, isolated product shot of a sleek wooden sideboard cabinet with slatted doors, against a pure light beige background. High-end catalog style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3lj7l8DFHdRPjx5Ovz7ZSvKH3LerPwbQyvgA24r-7d0AKEJT_txIzBpWfmATh7MgM1INXMTdBKpNIg34LgTXrKyYOnmYKG7EUnc-l96Q-cIZpT7NFbr7y9RuRZyHoovBi_glbRZmOqstrQOWUuVjprpt04AcSJWFoHdhx26wXT3n1d3kTo57H3EUJpkFUEIcNJHWm-6PTceoPCtI0Z8my9HcMhZH68WAdh8QkBpE4oYYSyhDgvDpkOg"/>
+<div class="absolute top-4 right-4 bg-surface-container-lowest/90 backdrop-blur rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary" data-icon="favorite_border">favorite_border</span>
+</div>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface mb-1">Haven Sideboard</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$35 / mo</p>
+</div>
+</div>
+</div>
+<style>
+                .hide-scrollbar::-webkit-scrollbar {
+                    display: none;
+                }
+                .hide-scrollbar {
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
+                }
+            </style>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-inverse-surface border-t border-outline-variant/50 w-full py-16 mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Brand Column -->
+<div class="col-span-1 md:col-span-1 mb-8 md:mb-0">
+<a class="font-headline-lg text-headline-lg text-primary mb-4 block" href="#">RentEase</a>
+<p class="font-body-md text-body-md text-on-surface-variant">Conscious Living, Curated Spaces.</p>
+</div>
+<!-- Links Columns (Simplified for alignment with JSON) -->
+<div class="col-span-1 md:col-span-3 grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md text-primary uppercase">Services</h4>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary hover:underline decoration-primary underline-offset-4 transition-all duration-200" href="#">Shipping &amp; Delivery</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary hover:underline decoration-primary underline-offset-4 transition-all duration-200" href="#">Secure Payments</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary hover:underline decoration-primary underline-offset-4 transition-all duration-200" href="#">Quality Guarantee</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md text-primary uppercase">Company</h4>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary hover:underline decoration-primary underline-offset-4 transition-all duration-200" href="#">24/7 Support</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary hover:underline decoration-primary underline-offset-4 transition-all duration-200" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-12 pt-8 border-t border-outline-variant/30 text-center md:text-left">
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 RentEase. Conscious Living, Curated Spaces.</p>
+</div>
+</footer>
+</body></html>

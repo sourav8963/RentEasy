@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RentEase - Shop Modern Living Furniture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;family=Hanken+Grotesk:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e5e2dd",
+                        "on-primary-container": "#fffbff",
+                        "tertiary-fixed": "#ebe1da",
+                        "on-tertiary-fixed": "#1f1b17",
+                        "primary-fixed": "#ffdbcb",
+                        "on-surface": "#1c1c19",
+                        "on-error-container": "#93000a",
+                        "primary": "#904820",
+                        "inverse-primary": "#ffb692",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#ffb692",
+                        "error-container": "#ffdad6",
+                        "secondary": "#825422",
+                        "inverse-on-surface": "#f3f0eb",
+                        "outline": "#87736a",
+                        "on-primary": "#ffffff",
+                        "surface": "#fcf9f4",
+                        "on-tertiary-fixed-variant": "#4c4641",
+                        "on-tertiary-container": "#fffbff",
+                        "outline-variant": "#dac2b7",
+                        "on-secondary-fixed": "#2c1600",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#54433b",
+                        "surface-variant": "#e5e2dd",
+                        "secondary-container": "#fdc083",
+                        "on-secondary-container": "#784c1a",
+                        "surface-container-high": "#ebe8e3",
+                        "secondary-fixed-dim": "#f7bb7e",
+                        "tertiary-fixed-dim": "#cec5be",
+                        "surface-dim": "#dcdad5",
+                        "on-secondary-fixed-variant": "#663d0b",
+                        "inverse-surface": "#31302d",
+                        "tertiary": "#615b55",
+                        "surface-bright": "#fcf9f4",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#7b736d",
+                        "on-background": "#1c1c19",
+                        "primary-container": "#af6036",
+                        "on-primary-fixed": "#341100",
+                        "surface-tint": "#934a22",
+                        "background": "#fcf9f4",
+                        "surface-container-low": "#f6f3ee",
+                        "surface-container": "#f0ede9",
+                        "secondary-fixed": "#ffdcbd",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#75330c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "label-md": ["Hanken Grotesk"],
+                        "display-lg": ["Manrope"],
+                        "headline-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-surface');
+            -webkit-font-smoothing: antialiased;
+        }
+        .ambient-shadow-card {
+            box-shadow: 0px 4px 20px rgba(45, 41, 38, 0.04);
+        }
+        .ambient-shadow-hover:hover {
+            box-shadow: 0px 12px 32px rgba(45, 41, 38, 0.08);
+            transform: translateY(-2px);
+        }
+        .transition-standard {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        input[type="checkbox"], input[type="radio"] {
+            border-color: theme('colors.secondary-container');
+            background-color: theme('colors.surface');
+        }
+        input[type="checkbox"]:checked, input[type="radio"]:checked {
+            background-color: theme('colors.primary');
+            border-color: theme('colors.primary');
+        }
+        input[type="range"] {
+            accent-color: theme('colors.primary');
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<nav class="bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-md docked full-width top-0 sticky z-50 border-b border-secondary-container/50">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-20">
+<!-- Brand -->
+<div class="font-headline-lg text-headline-lg tracking-tight text-primary">
+            RentEase
+        </div>
+<!-- Navigation Links (Desktop) -->
+<div class="hidden md:flex items-center gap-gutter">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-md text-label-md hover:bg-secondary-container/20 transition-all duration-300 px-3 py-2 rounded-lg scale-95 active:scale-90 transition-transform" href="#">Home</a>
+<a class="text-primary border-b-2 border-primary font-bold pb-1 font-label-md text-label-md hover:bg-secondary-container/20 transition-all duration-300 px-3 py-2 rounded-lg scale-95 active:scale-90 transition-transform" href="#">Shop</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-md text-label-md hover:bg-secondary-container/20 transition-all duration-300 px-3 py-2 rounded-lg scale-95 active:scale-90 transition-transform" href="#">Plan</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-md text-label-md hover:bg-secondary-container/20 transition-all duration-300 px-3 py-2 rounded-lg scale-95 active:scale-90 transition-transform" href="#">Support</a>
+</div>
+<!-- Trailing Icons -->
+<div class="flex items-center gap-unit">
+<button class="p-2 text-primary hover:bg-secondary-container/20 rounded-full transition-all duration-300 scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="p-2 text-primary hover:bg-secondary-container/20 rounded-full transition-all duration-300 scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">person</span>
+</button>
+<button class="p-2 text-primary hover:bg-secondary-container/20 rounded-full transition-all duration-300 scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Container -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-gutter grid grid-cols-1 lg:grid-cols-12 gap-gutter mt-8">
+<!-- Sidebar Filters -->
+<aside class="lg:col-span-3 flex flex-col gap-gutter hidden md:block">
+<!-- Breadcrumbs -->
+<div class="font-body-md text-body-md text-on-surface-variant mb-4">
+<a class="hover:text-primary transition-standard" href="#">Home</a> / 
+            <a class="hover:text-primary transition-standard" href="#">Shop</a> / 
+            <span class="text-primary font-bold">Furniture</span>
+</div>
+<div class="bg-surface-container-low ambient-shadow-card rounded-xl p-6 border border-secondary-container/50">
+<h3 class="font-headline-lg text-2xl text-primary mb-4">Categories</h3>
+<ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+<li><label class="flex items-center gap-2 cursor-pointer hover:text-primary transition-standard"><input checked="" class="form-radio h-4 w-4 text-primary focus:ring-primary" name="cat" type="radio"/> All Furniture</label></li>
+<li><label class="flex items-center gap-2 cursor-pointer hover:text-primary transition-standard"><input class="form-radio h-4 w-4 text-primary focus:ring-primary" name="cat" type="radio"/> Living Room</label></li>
+<li><label class="flex items-center gap-2 cursor-pointer hover:text-primary transition-standard"><input class="form-radio h-4 w-4 text-primary focus:ring-primary" name="cat" type="radio"/> Bedroom</label></li>
+<li><label class="flex items-center gap-2 cursor-pointer hover:text-primary transition-standard"><input class="form-radio h-4 w-4 text-primary focus:ring-primary" name="cat" type="radio"/> Kitchen &amp; Dining</label></li>
+<li><label class="flex items-center gap-2 cursor-pointer hover:text-primary transition-standard"><input class="form-radio h-4 w-4 text-primary focus:ring-primary" name="cat" type="radio"/> Appliances</label></li>
+</ul>
+</div>
+<div class="bg-surface-container-low ambient-shadow-card rounded-xl p-6 border border-secondary-container/50">
+<h3 class="font-headline-lg text-2xl text-primary mb-4">Monthly Rent</h3>
+<div class="px-2 mb-4">
+<input class="w-full h-1 bg-secondary-container rounded-lg appearance-none cursor-pointer" max="200" min="10" type="range" value="100"/>
+<div class="flex justify-between font-label-md text-label-md text-on-surface-variant mt-2">
+<span>$10</span>
+<span>$200+</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low ambient-shadow-card rounded-xl p-6 border border-secondary-container/50">
+<h3 class="font-headline-lg text-2xl text-primary mb-4">Availability</h3>
+<ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+<li><label class="flex items-center gap-2 cursor-pointer hover:text-primary transition-standard"><input checked="" class="form-checkbox h-4 w-4 rounded text-primary focus:ring-primary" type="checkbox"/> Available Now</label></li>
+<li><label class="flex items-center gap-2 cursor-pointer hover:text-primary transition-standard"><input class="form-checkbox h-4 w-4 rounded text-primary focus:ring-primary" type="checkbox"/> Pre-order</label></li>
+</ul>
+</div>
+</aside>
+<!-- Product Grid Content -->
+<section class="lg:col-span-9">
+<!-- Header & Sort -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-gutter">
+<div>
+<!-- Mobile Breadcrumbs -->
+<div class="md:hidden font-body-md text-body-md text-on-surface-variant mb-2">
+<a href="#">Home</a> / <a href="#">Shop</a> / <span class="text-primary font-bold">Furniture</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary mb-2">Modern Living Furniture</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Showing 1-12 of 48 premium pieces</p>
+</div>
+<div class="mt-4 md:mt-0 flex items-center gap-unit">
+<label class="font-label-md text-label-md text-primary uppercase tracking-widest hidden md:inline" for="sort">Sort by</label>
+<select class="bg-surface border-2 border-secondary-container rounded-lg py-2 px-4 font-body-md text-body-md text-on-surface focus:ring-1 focus:ring-primary focus:border-primary transition-standard outline-none" id="sort">
+<option>Recommended</option>
+<option>Latest Arrivals</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+</select>
+</div>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-gutter">
+<!-- Product Card 1 -->
+<article class="bg-surface rounded-xl overflow-hidden ambient-shadow-card ambient-shadow-hover transition-standard flex flex-col group border-2 border-surface-container-high">
+<div class="relative h-64 overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A serene, high-quality product shot of a minimalist wooden lounge chair with cream upholstery, placed in a well-lit studio space with soft shadows and a light Japandi aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvfghXAhBVx_uDpx6WwyBXsYNyedE8QFYLTOwJpskXEDNS_P2-Z7uWEi2fFHs_A7f3wjRBXovvD6IAfgN5qiQOtTiH0OhHoUzjtho5reEVB0HItR8opktMwHcQQleNuIR3__7_NYaEAipKileXI-CqfHLN4-uJYWKqOumQ32n5WaiS8GEpLgG7c4klMQWZY6vXOGdNhQPv41PaEzdfjvEJs8Ui_2tjT1agkz4h0HzBqoSTMPLwLCRpzA"/>
+<div class="absolute top-3 left-3 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-md text-label-md">
+                        New
+                    </div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h2 class="font-headline-lg text-2xl text-on-surface mb-2">Komorebi Lounge Chair</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow">Solid oak frame, sustainable linen.</p>
+<div class="flex justify-between items-end mb-4 pt-4 border-t border-surface-container-high">
+<div>
+<span class="font-label-md text-label-md text-on-surface block">Rent</span>
+<span class="font-headline-lg text-2xl text-primary">$45<span class="text-body-md text-on-surface-variant font-normal">/mo</span></span>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md text-on-surface-variant block">Deposit</span>
+<span class="font-body-md text-body-md text-on-surface">$90</span>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-label-md text-label-md hover:bg-primary-container hover:text-on-primary-container transition-colors text-center">Rent Now</button>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article class="bg-surface rounded-xl overflow-hidden ambient-shadow-card ambient-shadow-hover transition-standard flex flex-col group border-2 border-surface-container-high">
+<div class="relative h-64 overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A clean, highly detailed photo of a modern Japandi style coffee table made of light ash wood, set against a warm white background with natural lighting casting soft shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApX4mXkmKuST2fZxWYvmG9zMW9OFctKtrlZ9GMdQLJvGhduzZguPeq7pm2gfg3McPQN0nN8lzk9U032ClnoHov0bWe9LKUU-_fEKMypn3iomFfWyzyQyAmf63pbIWNKY1dTUowy-5wqkQHq8lJrOp5gLmhPYCEavvPTb--Nbn48fxwBWIIfRQNfQ-6_7v57i7i8DKEz1N4XMsRcv_mtLp40Y9LoSJ6rxxOd5ltG4w3dRRUq2Og79Rwmg"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h2 class="font-headline-lg text-2xl text-on-surface mb-2">Enso Coffee Table</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow">Low profile ash wood, tempered glass.</p>
+<div class="flex justify-between items-end mb-4 pt-4 border-t border-surface-container-high">
+<div>
+<span class="font-label-md text-label-md text-on-surface block">Rent</span>
+<span class="font-headline-lg text-2xl text-primary">$25<span class="text-body-md text-on-surface-variant font-normal">/mo</span></span>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md text-on-surface-variant block">Deposit</span>
+<span class="font-body-md text-body-md text-on-surface">$50</span>
+</div>
+</div>
+<button class="w-full border-2 border-secondary-container text-primary py-3 rounded-lg font-label-md text-label-md hover:bg-secondary-container/20 transition-colors text-center">Rent Now</button>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article class="bg-surface rounded-xl overflow-hidden ambient-shadow-card ambient-shadow-hover transition-standard flex flex-col group border-2 border-surface-container-high">
+<div class="relative h-64 overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A beautifully styled photograph of a minimalist 3-seater sofa in a muted taupe color, resting on a textured cream rug in a sunlit room with subtle Japandi interior elements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArsNvv5pUT5BBcO6ylcFdQcWRWpMNxXCuTZPLgRI4lia6_qA1tl1k_x1P9Zf7a89Mis4udn_xmACttqKG7xxZoUtdJGBhejpSqjq07g0zK71OlqGUvzRwHEk9LZi2xtqhMcDdN8YBZ4PHREuzquv6F28g4FLl9tSHhyyorAmpmxVMMlLssRwBr-2a_0dCoBL6Gy_cYPOLDvffx-eGksKR42OjLfNyN73GI1FeXxZIHMUVM1qsAIzNgGA"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h2 class="font-headline-lg text-2xl text-on-surface mb-2">Wabi 3-Seater Sofa</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow">Deep seating, performance boucle.</p>
+<div class="flex justify-between items-end mb-4 pt-4 border-t border-surface-container-high">
+<div>
+<span class="font-label-md text-label-md text-on-surface block">Rent</span>
+<span class="font-headline-lg text-2xl text-primary">$85<span class="text-body-md text-on-surface-variant font-normal">/mo</span></span>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md text-on-surface-variant block">Deposit</span>
+<span class="font-body-md text-body-md text-on-surface">$170</span>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-label-md text-label-md hover:bg-primary-container hover:text-on-primary-container transition-colors text-center">Rent Now</button>
+</div>
+</article>
+</div>
+<!-- Pagination (Mock) -->
+<div class="mt-gutter flex justify-center items-center gap-unit">
+<button class="p-2 border-2 border-secondary-container rounded text-on-surface-variant hover:text-primary hover:border-primary transition-colors"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+<button class="w-8 h-8 rounded bg-primary text-on-primary font-label-md flex items-center justify-center">1</button>
+<button class="w-8 h-8 rounded hover:bg-secondary-container/50 text-on-surface font-label-md flex items-center justify-center transition-colors">2</button>
+<button class="w-8 h-8 rounded hover:bg-secondary-container/50 text-on-surface font-label-md flex items-center justify-center transition-colors">3</button>
+<button class="p-2 border-2 border-secondary-container rounded text-on-surface-variant hover:text-primary hover:border-primary transition-colors"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container w-full py-10 mt-auto border-t-4 border-secondary-container">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="col-span-1 md:col-span-2">
+<div class="font-headline-lg text-2xl text-primary mb-4">RentEase</div>
+<p class="font-body-md text-body-md text-on-surface max-w-sm mb-6">
+                © 2024 RentEase. Conscious Living, Curated Spaces.
+            </p>
+</div>
+<div class="col-span-1 md:col-span-2 flex flex-wrap gap-gutter justify-end">
+<div class="flex flex-col gap-3">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary hover:underline decoration-primary underline-offset-4 transition-colors duration-200" href="#">Shipping &amp; Delivery</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary hover:underline decoration-primary underline-offset-4 transition-colors duration-200" href="#">Secure Payments</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary hover:underline decoration-primary underline-offset-4 transition-colors duration-200" href="#">Quality Guarantee</a>
+</div>
+<div class="flex flex-col gap-3">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary hover:underline decoration-primary underline-offset-4 transition-colors duration-200" href="#">24/7 Support</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary hover:underline decoration-primary underline-offset-4 transition-colors duration-200" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

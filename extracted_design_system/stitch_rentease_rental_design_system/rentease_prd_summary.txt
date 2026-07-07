@@ -1,0 +1,32 @@
+# Product Requirements Document (PRD)
+## RentEase – Furniture & Appliance Rental Platform
+**Version:** 1.0 | **Status:** Draft
+
+### 1. Executive Summary
+RentEase is a full-stack web-based rental platform designed to provide affordable and flexible furniture and appliance rental services for students, working professionals, and families.
+
+### 2. Problem Statement
+Purchasing furniture and appliances for temporary stays results in significant financial investment, transportation difficulties, and maintenance responsibilities. Current services often have high deposits and poor inventory visibility.
+
+### 3. Target Audience
+- College Students
+- Working Professionals
+- Temporary Residents
+- Corporate Employees
+- Furniture/Appliance Vendors
+
+### 4. Key Features (In Scope)
+- **Customer:** Product catalog, rental plans, cart, checkout, delivery/pickup scheduling, maintenance requests, rental extension.
+- **Vendor:** Inventory management, pricing updates, maintenance handling, delivery tracking.
+- **Admin:** User/vendor management, order monitoring, reports & analytics.
+
+### 5. Technical Stack
+- **Frontend:** React.js, TypeScript, Tailwind CSS.
+- **Backend:** Node.js, Express.js, MongoDB.
+
+### 6. Core Modules
+1. **Authentication:** Role-based access (Customer, Vendor, Admin).
+2. **Product Management:** Search, filter, and detailed view for Furniture & Appliances.
+3. **Shopping Cart & Checkout:** Calculate rental cost and security deposits.
+4. **Maintenance Module:** Request tracking and resolution workflow.
+5. **Dashboards:** Dedicated interfaces for all three user roles.
